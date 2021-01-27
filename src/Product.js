@@ -1,10 +1,24 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useHistory,useRouteMatch, useParams } from "react-router-dom";
 
 const Product = ({ data }) => {
   const { productId } = useParams();
+
+  const { url, path } = useRouteMatch();
+  console.log("day la url", url)
+  console.log(" day la path", path)
+  console.log(useParams())
+  const history = useHistory()
+
   const product = data.find((p) => p.id === Number(productId));
   let productData;
+
+  const historyTest = () => {
+    // history.push('/')
+    // push() la them vo stack
+    // history.replace('/')
+    //replace() la pop roi roi them vo stack
+  }
 
   if (product) {
     productData = (
@@ -30,6 +44,7 @@ const Product = ({ data }) => {
       >
         {productData}
       </div>
+      <button onClick={historyTest} >History Test</button>
     </div>
   );
 };

@@ -35,7 +35,7 @@ const Products = () => {
   ];
 
   const { url } = useRouteMatch();
-
+  // console.log(url);
   /* Create an array of `<li>` items for each product */
   const linkList = productData.map((product) => {
     return (
@@ -63,8 +63,9 @@ const Products = () => {
           </ul>
         </div>
       </div>
-
-    
+      <Route path={`${url}/:productId`}>
+        <Product data={ productData }/>
+      </Route>
     </div>
   );
 };
