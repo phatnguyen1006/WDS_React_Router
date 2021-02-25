@@ -12,7 +12,9 @@ export default function Login() {
     });
   };
 
+
   if (redirectToReferrer) {
+    // console.log(from);
     return <Redirect to={from} />;
   }
 

@@ -16,7 +16,7 @@ const Category = () => {
 
   return (
     <div>
-     {/* Category */}
+      Category 
     </div>
   );
 };
